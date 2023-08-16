@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"folder_exclude_patterns": [],
+			"path": "."
+		}
+	],
+	"settings": {
+		"LSP": {
+			"ltex-ls": {
+				"settings": {
+					"ltex.dictionary": {
+						"en-US": [
+							"dockerfiles",
+							"snldev",
+							"snldev-dockerfiles"
+						],
+					},
+				},
+			},
+		}
+	},
+}
