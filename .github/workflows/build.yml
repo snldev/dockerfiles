@@ -41,8 +41,6 @@ jobs:
 
             with open(os.getenv("GITHUB_OUTPUT"), "a") as f:
               print(f"IMAGE_NAMES={json.dumps(images)}", file=f)
-      - name: Print output
-        run: echo ${{ steps.get_image_names.outputs.IMAGE_NAMES }}
   build_push:
     name: Build and push ${{ matrix.image }} to Container Registry
     runs-on: ubuntu-latest
