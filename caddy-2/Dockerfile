@@ -2,12 +2,13 @@
 #
 # A caddy 2 image supporting acme dns-01 challenges with cloudflare.
 #
-ARG VERSION=2.6
+ARG CADDY_VERSION=2.6
+ARG CLOUDFLARE_MODULE_COMMIT=a9d3ae2690a1d232bc9f8fc8b15bd4e0a6960eec
 
-FROM caddy:${VERSION}-builder-alpine AS builder
+FROM caddy:${CADDY_VERSION}-builder-alpine AS builder
 RUN xcaddy build \
-  --with github.com/caddy-dns/cloudflare \
+  --with github.com/caddy-dns/cloudflare@${CLOUDFLARE_MODULE_COMMIT} \
   ;
 
-FROM caddy:${VERSION}-alpine
+FROM caddy:${CADDY_VERSION}-alpine
 COPY --from=builder --link /usr/bin/caddy /usr/bin/caddy
