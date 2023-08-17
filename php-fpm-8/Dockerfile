@@ -2,12 +2,12 @@
 #
 # A php-fpm 8 image with composer, sqlite, and the amqp, apcu, intl, opcache, and zip extensions.
 #
-ARG VERSION=8.2
+ARG PHP_VERSION=8.2
 ARG COMPOSER_VERSION=2
 
 FROM composer/composer:${COMPOSER_VERSION}-bin AS composer
 FROM mlocati/php-extension-installer:latest AS php_extension_installer
-FROM php:${VERSION}-fpm-alpine
+FROM php:${PHP_VERSION}-fpm-alpine
 
 # php extensions installer: https://github.com/mlocati/docker-php-extension-installer
 COPY --from=php_extension_installer --link /usr/bin/install-php-extensions /usr/local/bin/
