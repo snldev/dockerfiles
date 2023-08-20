@@ -2,11 +2,11 @@
 #
 # A caddy 2 image supporting acme dns-01 challenges with cloudflare.
 #
-ARG CADDY_VERSION=2.6
+ARG CADDY_VERSION=2.7.4
 
 FROM caddy:${CADDY_VERSION}-builder-alpine AS builder
 RUN xcaddy build \
-  --with github.com/caddy-dns/cloudflare@a9d3ae2690a1d232bc9f8fc8b15bd4e0a6960eec \
+  --with github.com/caddy-dns/cloudflare@74f004e1c1ab9056288f0baf3cd4b0039d6c77f3 \
   ;
 
 FROM caddy:${CADDY_VERSION}-alpine
