@@ -67,7 +67,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.image }}
           tags: |
-            type=raw,value={{date 'YYYYMMDD'}}
+            type=sha,prefix=,format=long
+            type=raw,value={{date 'YYYYMMDD-HHmmss'}}
             type=raw,value=latest
       - name: Build and push Docker image
         uses: docker/build-push-action@2eb1c1961a95fc15694676618e422e8ba1d63825
