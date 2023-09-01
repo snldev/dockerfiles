@@ -16,7 +16,7 @@ jobs:
       IMAGE_NAMES: ${{ steps.get_image_names.outputs.IMAGE_NAMES }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
         with:
           fetch-depth: 0
       - name: Get changed files
@@ -54,7 +54,7 @@ jobs:
         image: ${{ fromJSON(needs.get_changed_docker_images.outputs.IMAGE_NAMES) }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
       - name: Login to Container Registry
         uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
         with:
