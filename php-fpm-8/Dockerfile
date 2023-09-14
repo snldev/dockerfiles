@@ -28,6 +28,8 @@ RUN set -eux; \
   opcache \
   amqp \
   pcntl \
+  pdo \
+  pdo_mysql \
   ;
 
 RUN mkdir -p /var/run/php
