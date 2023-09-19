@@ -30,6 +30,7 @@ RUN set -eux; \
   pcntl \
   pdo \
   pdo_mysql \
+  pdo_pgsql \
   ;
 
 RUN mkdir -p /var/run/php
